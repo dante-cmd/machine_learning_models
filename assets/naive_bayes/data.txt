@@ -1,0 +1,6 @@
+cat,document
+0,just plain boring
+0,entirely predictable and lacks energy
+0,no surprises and very few laughs
+1,very powerful
+1,the most fun film of the summer

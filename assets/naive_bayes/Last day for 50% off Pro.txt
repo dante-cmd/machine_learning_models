@@ -1,0 +1,849 @@
+Delivered-To: danteca.dtc@gmail.com
+Received: by 2002:a05:6504:9c2:b0:1d5:c8ca:57b2 with SMTP id j2csp4613430lts;
+        Wed, 6 Jul 2022 07:33:55 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1vFB7ZTaXQxlaeo2L1V6RlZwvSvSkL3H1X+NK38kTe7u89P0xQun4gq+39IS3io5CsV8Q0J
+X-Received: by 2002:a81:5a86:0:b0:314:1495:8491 with SMTP id o128-20020a815a86000000b0031414958491mr48444600ywb.419.1657118035393;
+        Wed, 06 Jul 2022 07:33:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1657118035; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Tdcl8HGh1RSgdTflvnG3FvtoHXWKVHErGcV6seaNYYT71g/5SqRu7+OiHjl97PANWM
+         5DLjSC4WoE8bE6ozlmHqv3/X+lmlcfMX5gP0PAaCVLJJhn/ApS0CS8pOtiYj9GUuDdFA
+         3Rr6U1yiKNADywcZe5acoGbCXwka8eMhanC4dxH2unkwHylGOcu+CDG60hJ5q0HczAxB
+         bdKFHAFIDk2DBxk8XSYIjrsmqUU/wrgqQPIJljSzz1OFuJSR93LA4z/Pw4wJEY4ruFJr
+         eEJizJRN4FV55bs+eNn7GBODoP2QJVEGGiWOmvR56fTTP9cpRddA/lWQF3la/i0m5byv
+         NRjw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe:reply-to:feedback-id:to:from:subject
+         :mime-version:date:sender:dkim-signature:dkim-signature;
+        bh=6gWQ2LifuRhzFgDPTNqTto4kFTwWHALJVeHJ1jiKVQM=;
+        b=GHgchoRLO/GDAj5sGr74nOuOUcNEFeSsnsdiBKYmPTyEZiMJGAF1ABsORdsbj8vNvs
+         DMCuSn9l7raNYftRa/ZqiCQhAdzGlqv06+cbLLU1BHh+gOG8eVCyJbHDR3XwdLmmoQuB
+         yOrHirIqrIQ8n4amGZYhR437dlVy52dUFPbssiSyMlmU1OQAqnVB7GJZb/EV+Cz+Zpln
+         oS53UQvgDxK6qfD3jnVxZnXvPMu1TVdxWVKMPpyXOqlTqAiwB+HoXfRW7UkkR+fW3gk1
+         gEBTdVrohVcWdrLktITRRgJVXnPPFz9VXd9MMa3igMIbjw5ElKAtPrLC24+99uJHveZv
+         bjkw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@itr.mail.codecademy.com header.s=smtp header.b=dZnHvoox;
+       dkim=pass header.i=@mailgun.org header.s=mg2 header.b=b6VsobwV;
+       spf=pass (google.com: domain of bounce+b2291a.8dce2a-danteca.dtc=gmail.com@itr.mail.codecademy.com designates 69.72.36.90 as permitted sender) smtp.mailfrom="bounce+b2291a.8dce2a-danteca.dtc=gmail.com@itr.mail.codecademy.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=codecademy.com
+Return-Path: <bounce+b2291a.8dce2a-danteca.dtc=gmail.com@itr.mail.codecademy.com>
+Received: from m36-90.mailgun.net (m36-90.mailgun.net. [69.72.36.90])
+        by mx.google.com with UTF8SMTPS id e11-20020a25b74b000000b0066cf504f751si44227431ybm.285.2022.07.06.07.33.47
+        for <danteca.dtc@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 06 Jul 2022 07:33:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+b2291a.8dce2a-danteca.dtc=gmail.com@itr.mail.codecademy.com designates 69.72.36.90 as permitted sender) client-ip=69.72.36.90;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@itr.mail.codecademy.com header.s=smtp header.b=dZnHvoox;
+       dkim=pass header.i=@mailgun.org header.s=mg2 header.b=b6VsobwV;
+       spf=pass (google.com: domain of bounce+b2291a.8dce2a-danteca.dtc=gmail.com@itr.mail.codecademy.com designates 69.72.36.90 as permitted sender) smtp.mailfrom="bounce+b2291a.8dce2a-danteca.dtc=gmail.com@itr.mail.codecademy.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=codecademy.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=itr.mail.codecademy.com;
+ q=dns/txt; s=smtp; t=1657118035; x=1657326835; h=Message-Id:
+ X-Feedback-Id: List-Unsubscribe: Reply-To: To: To: From: From: Subject:
+ Subject: Content-Type: Mime-Version: Date: Sender: Sender:
+ X-Feedback-Id; bh=6gWQ2LifuRhzFgDPTNqTto4kFTwWHALJVeHJ1jiKVQM=; b=dZnHvooxWTGWsJI0I6TGmGpTz+l0E245LNiy7gZ7K5ZFOAxeGSXysV1mjYP4yhe6AhT+9vQP
+ 60Q8Ag8dEYJW5JnMlw9Y9KI1OJ4oREoHu19c//FMxS2/Sp2Ewjskp1f6DJcVkb/LkheDZKS0
+ 1cjDUm9x7PtaV8eA1jz4UgU9cxI=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg2;
+ t=1657118034; x=1657326834; h=Message-Id: X-Feedback-Id:
+ List-Unsubscribe: Reply-To: To: To: From: From: Subject: Subject:
+ Content-Type: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=6gWQ2LifuRhzFgDPTNqTto4kFTwWHALJVeHJ1jiKVQM=; b=b6VsobwVq3RhEVPlzC5efPzdmp23+mUovAcCn7cGRI4JiGnZhWNiF1K5NI39D0eB7xbJ0p9T
+ MdWKfDBeATo16C4s7S8PKSjaKMM5se64O0HJZV0mUUfv1KfP+iv9z3Vgu+SXzLhC2Sxgx72+
+ KbGoJye1qmE4gYegamJeDT08K4Y=
+X-Feedback-Id: 5f46d356f141c6f8191fbaa6:mailgun
+X-Mailgun-Sending-Ip: 69.72.36.90
+X-Mailgun-Sid: WyJiNzExOCIsICJkYW50ZWNhLmR0Y0BnbWFpbC5jb20iLCAiOGRjZTJhIl0=
+Received: from <unknown> (<unknown> []) by
+ api-n13.prod.us-west-2.postgun.com with HTTP id 62c59d3c90b0d63b7f005265;
+ Wed, 06 Jul 2022 14:33:32 GMT
+Sender: learn@itr.mail.codecademy.com
+Date: Wed, 06 Jul 2022 14:33:32 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="b0ace4ba42bb2b1e72376e97b11c9879c9f4a1dfbfaf876415d28b020414"
+Subject: Last day for 50% off Pro
+From: Codecademy <learn@itr.mail.codecademy.com>
+To: danteca.dtc@gmail.com
+X-Campaign-Id: 4605734
+X-Message-Id: f74d459fc25446009b14e60847aae413
+Feedback-Id: 6256994:4605734:34640:iterable
+Return-Path: bounces@itr.mail.codecademy.com
+Reply-To: learn@codecademy.com
+List-Unsubscribe: <https://itr.links.codecademy.com/e/encryptedUnsubscribe?_r=13e4e7efd5b34d1d982e9fb34505f006&_s=f74d459fc25446009b14e60847aae413&_t=cEWbztFcEPXXScbV6NQtGGlpW4cvgqDsAYh2xA2vplwhNVhyPXkAVT81ijjYONAjBVLGzrWM18Ho688ZCLPNg1GImJTFKzMCKggwn1-JK8BLr7_Kk-sE6Bk6JKFnCV8iGG_mllAWNY6q-tCmFbzMUU2tTbSqEVs8B18SGMY0iz4%3D>,
+ <mailto:unsubscribe+4605734+6256994@unsubscribe.iterable.com>
+X-Feedback-Id: 6256994:4605734:34640:iterable
+X-Mailgun-Variables: {"metadata":"{\"messageId\":\"f74d459fc25446009b14e60847aae413\",
+ \"templateId\":6256994, \"projectId\":9044, \"campaignId\":4605734}"}
+Message-Id: <20220706143332.f6e5a285d1acf8a1@itr.mail.codecademy.com>
+
+--b0ace4ba42bb2b1e72376e97b11c9879c9f4a1dfbfaf876415d28b020414
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Join now to get an annual membership for less.  =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C=20
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C=20
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C=20
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C=20
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C=20
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+<https://www.codecademy.com/subscriptions/proGoldAnnualV1/checkout?utm_camp=
+aign=3Dcamp~july22_promo1~prod~Annual~geo~All~aud~Basic_Users~funn_Retarget=
+ing~msg~Start_Pro~cont~Still_Image~sited~Checkout~time~2022Q2~&utm_content=
+=3Dlastchance_img&utm_source=3Diterable&utm_medium=3Demail&periods=3Dyear&d=
+iscountCode=3DJULY22>
+
+
+LAST CHANCE
+
+
+50% off
+
+
+Join Pro today and get 50% off your annual membership with promo code JULY2=
+2.
+
+
+
+
+
+
+
+
+Join Pro=20
+<https://www.codecademy.com/subscriptions/proGoldAnnualV1/checkout?utm_camp=
+aign=3Dcamp~july22_promo1~prod~Annual~geo~All~aud~Basic_Users~funn_Retarget=
+ing~msg~Start_Pro~cont~CTA_Button~sited~Checkout~time~2022Q2~&utm_content=
+=3Dlastchance_cta&utm_source=3Diterable&utm_medium=3Demail&periods=3Dyear&d=
+iscountCode=3DJULY22>
+
+
+
+
+Join Pro Student=20
+<https://www.codecademy.com/subscriptions/proAnnualStudentV1a/checkout?utm_=
+campaign=3Dcamp~july22_promo1~prod~Annual~geo~All~aud~Basic_Users~funn_Reta=
+rgeting~msg~Start_Pro~cont~CTA_Button~sited~Checkout~time~2022Q2~&utm_conte=
+nt=3Dlastchance_student_cta&utm_source=3Diterable&utm_medium=3Demail&discou=
+ntCode=3DJULY22>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*50% Off Pro offer valid from July 5, 2022 at 12:00:00 am Eastern Standard=
+=20
+Time (=E2=80=9CEST=E2=80=9D) and ends at 11:59:59 pm EST on July 6, 2022. D=
+iscount is only=20
+applicable to new annual subscription plans, and cannot be combined with an=
+y=20
+other offer or used for any Codecademy for Business plans. Code valid one t=
+ime=20
+only. Discount is not applicable to taxes. Codecademy reserves the right to=
+=20
+modify or cancel this promotion at any time without notice. Any subscriptio=
+n=20
+plan purchases are subject to Codecademy=E2=80=99sTerms of Service=20
+<https://www.codecademy.com/terms>.
+
+
+
+
+
+
+
+View Web Version=20
+<https://itr.links.codecademy.com/e/evib?_t=3D13e4e7efd5b34d1d982e9fb34505f=
+006&_m=3Df74d459fc25446009b14e60847aae413&_e=3DcEWbztFcEPXXScbV6NQtGGlpW4cv=
+gqDsAYh2xA2vplyF2pT4ij6woWotqFUAifBP9GKCIXaQPDF-rGz3lOdR7PBydBdH3lOzytuIHNO=
+Ve_LljjMzkO8qTS6rhr8GICUN>
+ |Email Preferences=20
+<https://www.codecademy.com/account/mail_settings?utm_source=3Diterable&utm=
+_medium=3Demail>
+ |Unsubscribe=20
+<https://itr.links.codecademy.com/e/encryptedUnsubscribe?_r=3D13e4e7efd5b34=
+d1d982e9fb34505f006&_s=3Df74d459fc25446009b14e60847aae413&_t=3DcEWbztFcEPXX=
+ScbV6NQtGGlpW4cvgqDsAYh2xA2vplwhNVhyPXkAVT81ijjYONAjBVLGzrWM18Ho688ZCLPNg1G=
+ImJTFKzMCKggwn1-JK8BkMjI1nxOwu5Z_4fV4X3dH8vnk-pQ3KNSZJE5yR_oYfPB-bAq6LAWht0=
+gtpKLzQSWC9WgwD1q8VwmCBUtn28gT8qIaZtY8e-5sPYUdBRtMsx3SISySljeTO6Jg7jRdcJI%3=
+D>
+ |Privacy Policy=20
+<https://www.codecademy.com/policy?utm_source=3Diterable&utm_medium=3Demail=
+>
+
+Copyright Codecademy. All rights reserved.=20
+
+575 Broadway, 5th Floor, New York City, NY 10012
+
+--b0ace4ba42bb2b1e72376e97b11c9879c9f4a1dfbfaf876415d28b020414
+Content-Type: text/html; charset="ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=3D"http://www.w3.org/1999/xh=
+tml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micro=
+soft-com:office:office"> <head> <!--[if gte mso 9]><xml> <o:OfficeDocumentS=
+ettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocu=
+mentSettings> </xml><![endif]--> <meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3DUTF-8"> <meta name=3D"HandheldFriendly" content=3D=
+"true"> <meta name=3D"MobileOptimized" content=3D"320"> <meta name=3D"viewp=
+ort" content=3D"width=3Ddevice-width"> <meta name=3D"color-scheme" content=
+=3D"light only"> <meta name=3D"supported-color-schemes" content=3D"light on=
+ly"> <title></title> <!--[if !mso]><!--> <link href=3D"https://www.cdn1ve3z=
+g.com/shared/fonts/SuisseIntlMono/stylesheet.css" rel=3D"stylesheet" type=
+=3D"text/css"> <link href=3D"https://fonts.googleapis.com/css2?family=3DIBM=
++Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;=
+1,300;1,400;1,500;1,600;1,700&amp;display=3Dswap" rel=3D"stylesheet" type=
+=3D"text/css"> <link href=3D"https://www.cdn1ve3zg.com/shared/fonts/Apercu/=
+stylesheet.css" rel=3D"stylesheet" type=3D"text/css"> <link href=3D"https:/=
+/fonts.googleapis.com/css2?family=3DWork+Sans:ital,wght@0,100;0,200;0,300;0=
+,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,70=
+0;1,800;1,900&amp;display=3Dswap" rel=3D"stylesheet" type=3D"text/css"> <!-=
+-<![endif]--> <style type=3D"text/css">span,td,table,div{-webkit-font-smoot=
+hing:antialiased;-moz-osx-font-smoothing:grayscale}.st-email-body{width:100=
+%!important;-webkit-text-size-adjust:100%;margin:0 auto!important;padding:0=
+;background-color:#fff}span.st-preheader{display:none!important}img+div{dis=
+play:none}a[href^=3D"tel"],a[href^=3D"sms"]{text-decoration:none;color:inhe=
+rit!important;pointer-events:none;cursor:default}u+.st-email-body a{color:i=
+nherit;text-decoration:none;font-size:inherit;font-family:inherit;font-weig=
+ht:inherit;line-height:inherit}*[x-apple-data-detectors]{color:inherit!impo=
+rtant;text-decoration:none!important;font-size:inherit!important;font-famil=
+y:inherit!important;font-weight:inherit!important;line-height:inherit!impor=
+tant}a,a:hover,a:link,a:visited{text-decoration:none!important;outline:0}p{=
+margin:0;padding:0}.st-hide-desktop{display:none;font-size:0;height:0;min-h=
+eight:0;max-height:0;line-height:0;mso-hide:all}.st-gmail-fix{display:none!=
+important}@media screen and (max-width:480px){.st-col,.st-mobile-full-width=
+,.st-module-wrapper-table,.st-wrapper,.st-wrapper-table{width:100%!importan=
+t}.st-col{padding:0!important}.st-resize{width:100%!important}.st-mobile-wi=
+dth-constraint,.st-resize{display:block!important;height:auto!important}.st=
+-mobile-width-constraint{max-width:100%!important}.st-equal-height,.st-heig=
+ht-auto{height:auto!important}.st-hide-desktop{display:table-row!important}=
+=2Est-hide-mobile{display:none!important=
+}.st-mobile-inline{display:inline!imp=
+ortant}.show-img-mobile{display:table-row!important;width:100%!important;fl=
+oat:none;overflow:visible!important;height:auto!important}.st-dynamic-1149-=
+2,u+.st-email-body .st-dynamic-1149-2 img{width:100%!important;max-width:98=
+px!important}.st-dynamic-1149-5{background-image:none!important}.st-wrapper=
+-table{width:100%!important;max-width:480px!important;margin:0 auto}}#Messa=
+geViewBody .st-module-wrapper-table{margin-top:-1px}@media(max-width:649px)=
+ and (min-width:481px){.st-module-wrapper-table{margin-top:-1px!important}}=
+div>u+.body .st-module-wrapper-table{margin-top:0!important}</style> <!--[i=
+f mso]><style>table{border-collapse:collapse}span.MsoHyperlink{mso-style-pr=
+iority:99;color:inherit}span.MsoHyperlinkFollowed{mso-style-priority:99;col=
+or:inherit}ul,ol{margin:0!important}ol li,ul li{margin-top:0!important;marg=
+in-bottom:0!important;margin-left:40px!important}</style><![endif]--> <!--[=
+if gte mso 9]><style>.st-mso-full-width{width:100%}</style><![endif]--> <!-=
+-[if IEMobile]><style type=3D"text/css">.st-mso-full-width{width:100%}</sty=
+le><![endif]--> <!--[if mso]><style>.monofont h1,h2,h3,h4,h5,h6,p,a,span,td=
+,strong{font-family:IBM Plex Mono',monospace,Arial,sans-serif!important}</s=
+tyle><![endif]--> <!--[if mso]><style>h1,h2,h3,h4,h5,h6,p,a,span,td,strong{=
+font-family:Helvetica,Arial,sans-serif!important}</style><![endif]--> <!--[=
+if mso]><style>.outlook-font-size a span{font-size:94%!important}</style><!=
+[endif]--> <style>.minw-203 a{min-width:167px!important}.minw-228 a{min-wid=
+th:192px!important}.minw-180 a{min-width:144px!important}.minw-60{min-width=
+:60px!important}.minw-33{min-width:33px!important}.border-2px-right>table{b=
+order-right:solid 2px #10162f!important}.border-2px-top>table{border-top:2p=
+x solid #10162f!important}.border-12px-bottom>table{border-bottom:12px soli=
+d #10162f!important}.border-2px-bottom>table{border-bottom:2px solid #10162=
+f!important}.border-2px-left>table{border-left:2px solid #10162f!important}=
+=2Eborder-15px-left>table{border-left:14=
+px solid #10162f!important}.lh-36 p{l=
+ine-height:36px!important}.lh-36 span{line-height:36px!important}.text-alig=
+n-left span{text-align:left!important}.dark-image{text-align:left!important=
+}ul{padding-left:15px!important}ul li{list-style-position:outside!important=
+}#MessageViewBody a{color:inherit;text-decoration:none;font-size:inherit;fo=
+nt-family:inherit;font-weight:inherit;line-height:inherit}@media(max-width:=
+480px){.padding-top-12{padding-top:12px!important}.vertical-padding-24{padd=
+ing-top:24px!important;padding-bottom:24px!important}.padding-sides-22{padd=
+ing-left:22px!important;padding-right:22px!important}.padding-bottom-56{pad=
+ding-bottom:56px!important}.padding-bottom-15{padding-bottom:15px!important=
+}.padding-bottom-50{padding-bottom:50px!important}.padding-bottom-24{paddin=
+g-bottom:24px!important}.padding-top-25{padding-top:25px!important}.padding=
+-top-30{padding-top:30px!important}.padding-top-20{padding-top:20px!importa=
+nt}.padding-bottom-32{padding-bottom:32px!important}.padding-sides-32{paddi=
+ng-left:32px!important;padding-right:32px!important}.padding-right-32{paddi=
+ng-right:32px!important}.padding-left-34{padding-left:34px!important}.paddi=
+ng-sides-bgimage .bgi-padding-left{width:22px!important}.padding-sides-bgim=
+age .bgi-padding-right{width:22px!important}.reset-padding-sides{padding-le=
+ft:0!important;padding-right:0!important}.reset-padding-top{padding-top:0!i=
+mportant}.padding-right-44{padding-right:44px!important}.padding-left-42{pa=
+dding-left:42px!important}.padding-right-30{padding-right:30px!important}.p=
+adding-left-22{padding-left:22px!important}.padding-left-18{padding-left:18=
+px!important}.padding-right-22{padding-right:22px!important}.center-element=
+ td{margin:0 auto!important;text-align:center!important}.center-element{tex=
+t-align:center!important}.center-element table{margin:0 auto!important}.cen=
+ter-element p{text-align:center!important}.center-element span{text-align:c=
+enter!important}.center-image img{margin:0 auto!important}.left-align p{tex=
+t-align:left!important}.left-align span{text-align:left!important}.small-fo=
+nt-mobile p{font-size:calc(100% - 10px)!important;line-height:1.2!important=
+}.small-font-mobile p span{font-size:calc(100% - 10px)!important;line-heigh=
+t:1.2!important}.minw-98{width:98px!important;min-width:98px!important;heig=
+ht:21px!important;max-width:98px!important}.minw-98 img{width:98px!importan=
+t;min-width:98px!important;height:21px!important;max-width:98px!important}.=
+cta-full-width table{width:100%!important}.cta-full-width a{width:320px!imp=
+ortant}}</style> <style>@media(prefers-color-scheme:dark){.light-image{disp=
+lay:none!important}.dark-image{display:block!important}.dark-yellow-bttn a{=
+color:#fff!important}}@media(prefers-color-scheme:light){.light-image{displ=
+ay:block!important}.dark-image{display:none!important}}[data-ogsc] .dark-im=
+age{display:block!important}[data-ogsb] .dark-image{display:block!important=
+}[data-ogsc] .light-image{display:none!important}[data-ogsb] .light-image{d=
+isplay:none!important}[data-ogsc] .dark-yellow-bttn a{color:#fff!important}=
+[data-ogsb] .dark-yellow-bttn a{color:#fff!important}</style> <style type=
+=3D"text/css">.__scope__gcu1tk9v258 .br-tbl-2 p{border-bottom-left-radius:2=
+px!important;border-top-left-radius:2px!important}.__scope__gcu1tk9v258 .hd=
+-br-br-2 p{border-bottom-right-radius:2px!important}.__scope__gcu1tk9v258 .=
+bt-br-bl-0 td{border-bottom-left-radius:0!important}.__scope__gcu1tk9v258 .=
+minw-180 a{min-width:148px!important}.__scope__u58j94742bo .br-tbl-2 p{bord=
+er-bottom-left-radius:2px!important;border-top-left-radius:2px!important}._=
+_scope__u58j94742bo .hd-br-br-2 p{border-bottom-right-radius:2px!important}=
+=2E__scope__u58j94742bo .bt-br-bl-0 td{b=
+order-bottom-left-radius:0!important}=
+=2E__scope__u58j94742bo .minw-180 a{min-=
+width:148px!important}.__scope__15ubs=
+pcdq8o .br-tbl-2 p{border-bottom-left-radius:2px!important;border-top-left-=
+radius:2px!important}.__scope__15ubspcdq8o .hd-br-br-2 p{border-bottom-righ=
+t-radius:2px!important}.__scope__15ubspcdq8o .bt-br-bl-0 td{border-bottom-l=
+eft-radius:0!important}.__scope__15ubspcdq8o .minw-180 a{min-width:148px!im=
+portant}.__scope__o4le81bqhd8 .br-tbl-2 p{border-bottom-left-radius:2px!imp=
+ortant;border-top-left-radius:2px!important}.__scope__o4le81bqhd8 .hd-br-br=
+-2 p{border-bottom-right-radius:2px!important}.__scope__o4le81bqhd8 .bt-br-=
+bl-0 td{border-bottom-left-radius:0!important}.__scope__o4le81bqhd8 .minw-1=
+80 a{min-width:148px!important}.__scope__j15l181qrmo .br-tbl-2 p{border-bot=
+tom-left-radius:2px!important;border-top-left-radius:2px!important}.__scope=
+__j15l181qrmo .hd-br-br-2 p{border-bottom-right-radius:2px!important}.__sco=
+pe__j15l181qrmo .bt-br-bl-0 td{border-bottom-left-radius:0!important}.__sco=
+pe__j15l181qrmo .minw-180 a{min-width:148px!important}</style> </head> <bod=
+y class=3D"st-email-body st-center-gmail" style=3D"-webkit-text-size-adjust=
+: 100%; padding: 0px; background-color: #ffffff; width: 100% !important; ma=
+rgin: 0 auto!important;"><span style=3D"color:transparent;visibility:hidden=
+;display:none;opacity:0;height:0;width:0;font-size:0;">Join now to get an a=
+nnual membership for less.</span><img src=3D"https://itr.links.codecademy.c=
+om/e/eo?_t=3D13e4e7efd5b34d1d982e9fb34505f006&amp;_m=3Df74d459fc25446009b14=
+e60847aae413&amp;_e=3DcEWbztFcEPXXScbV6NQtGGlpW4cvgqDsAYh2xA2vplwhNVhyPXkAV=
+T81ijjYONAjBVLGzrWM18Ho688ZCLPNg1GImJTFKzMCKggwn1-JK8BLr7_Kk-sE6Bk6JKFnCV8i=
+GG_mllAWNY6q-tCmFbzMUU2tTbSqEVs8B18SGMY0iz4%3D" style=3D"border:0;width:1px=
+;height:1px;border-width:0px!important;display:none!important;line-height:0=
+!important;" width=3D"1" height=3D"1"/> <div style=3D"-webkit-font-smoothin=
+g: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 0px; display=
+: none; visibility: hidden; opacity: 0; color: transparent; max-height: 0px=
+; height: 0; width: 0; mso-hide: all;"> &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; =
+&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj=
+; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zw=
+nj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &=
+zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;=
+ &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwn=
+j; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &z=
+wnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; =
+&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj=
+; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zw=
+nj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &=
+zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;=
+ &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwn=
+j; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &z=
+wnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; =
+&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj=
+; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zw=
+nj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &=
+zwnj; &zwnj; &zwnj; </div> <table role=3D"presentation" width=3D"100%" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#FFFFFF" class=3D"s=
+t-wrapper-table" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale; width: 100%;"> <tr> <td width=3D"100%" valign=3D"to=
+p" align=3D"center" class=3D"st-dynamic-1149-5" style=3D"-webkit-font-smoot=
+hing: antialiased; -moz-osx-font-smoothing: grayscale;"> <table role=3D"pre=
+sentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center=
+" width=3D"650" class=3D"st-wrapper st-wrapper-background st-module-wrapper=
+-table" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothi=
+ng: grayscale; width: 650px;"> <tr> <td width=3D"100%" bgcolor=3D"#FFF5FF" =
+valign=3D"top" class=3D"padding-sides-22 vertical-padding-24" style=3D"-web=
+kit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width:=
+ 100%; padding: 56px 60px 32px;"> <table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"530" class=3D"st-mso-full-wi=
+dth st-mobile-full-width" style=3D"-webkit-font-smoothing: antialiased; -mo=
+z-osx-font-smoothing: grayscale; width: 530px;"> <tr> <td width=3D"100%" al=
+ign=3D"center" valign=3D"top" style=3D"-webkit-font-smoothing: antialiased;=
+ -moz-osx-font-smoothing: grayscale; width: 100%;"> <table role=3D"presenta=
+tion" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale=
+; width: 100%;"> <tr> <td width=3D"100%" valign=3D"top" align=3D"left" clas=
+s=3D"st-dynamic-1149-2" style=3D"-webkit-font-smoothing: antialiased; -moz-=
+osx-font-smoothing: grayscale; width: 100%;"><img border=3D"0" valign=3D"to=
+p" width=3D"98" src=3D"https://www.cdn1ve3zg.com/xhw0ofjm93/en_us/images/62=
+72dd54adbea-1651694932.7117.png" height=3D"21" alt title class=3D"st-mobile=
+-width-constraint" style=3D"border: 0px; display: block; width: 98px; max-w=
+idth: 100%;"> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table=
+> </td> </tr> <tr> <td width=3D"100%" valign=3D"top" align=3D"center" class=
+=3D"st-dynamic-1149-5" style=3D"-webkit-font-smoothing: antialiased; -moz-o=
+sx-font-smoothing: grayscale;"> <table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"650" class=3D"=
+st-wrapper st-wrapper-background st-module-wrapper-table" style=3D"-webkit-=
+font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 650=
+px;"> <tr> <td width=3D"100%" bgcolor=3D"#FFF5FF" valign=3D"top" style=3D"-=
+webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; wid=
+th: 100%;"> <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"650" class=3D"st-mso-full-width st-mobile-full-widt=
+h" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale; width: 650px;"> <tr> <td width=3D"100%" align=3D"center" valign=
+=3D"top" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smooth=
+ing: grayscale; width: 100%;"> <table role=3D"presentation" width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tr>=
+ <td width=3D"100%" valign=3D"top" align=3D"center" style=3D"-webkit-font-s=
+moothing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 0px; wi=
+dth: 100%;"> <p height=3D"32" width=3D"100%" style=3D"padding: 0; mso-line-=
+height-rule: exactly; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-si=
+ze-adjust: 100%; width: 100%; height: 32px; max-height: 32px; margin: 0px; =
+font-size: 32px; line-height: 32px;"> &nbsp; </p> </td> </tr> </table> </td=
+> </tr> </table> </td> </tr> </table> </td> </tr> <tr> <td width=3D"100%" v=
+align=3D"top" align=3D"center" class=3D"st-dynamic-1149-5" style=3D"-webkit=
+-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;"> <table =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" alig=
+n=3D"center" width=3D"650" class=3D"st-wrapper st-wrapper-background st-mod=
+ule-wrapper-table" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-f=
+ont-smoothing: grayscale; width: 650px;"> <tr> <td width=3D"100%" bgcolor=
+=3D"#FFF5FF" valign=3D"top" class=3D"padding-sides-22" style=3D"-webkit-fon=
+t-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%; =
+padding-right: 60px; padding-left: 60px;"> <table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100=
+%" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale; width: 100%;"> <tr> <td width=3D"100%" valign=3D"top" align=3D"le=
+ft" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale;"> <!--[if gte mso 9]><table role=3D"presentation" width=3D"397.5=
+0pt" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:397.50=
+pt; border-collapse: collapse; table-width: fixed;" align=3D"center" dir=3D=
+"rtl"> <tr> <td width=3D"198.75pt" style=3D"width:198.75pt" dir=3D"ltr" val=
+ign=3D"top"><![endif]--> <table role=3D"presentation" align=3D"right" dir=
+=3D"ltr" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"265" cla=
+ss=3D"st-mso-full-width st-mobile-full-width" style=3D"-webkit-font-smoothi=
+ng: antialiased; -moz-osx-font-smoothing: grayscale; width: 265px;"> <tr> <=
+td width=3D"100%" align=3D"center" height=3D"290" valign=3D"top" class=3D"s=
+t-equal-height padding-bottom-15" style=3D"-webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale; width: 100%; height: 290px;"> <tab=
+le role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-s=
+moothing: grayscale; width: 100%;"> <tr> <td width=3D"100%" valign=3D"top" =
+align=3D"center" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale; width: 100%;"><a href=3D"https://itr.links.codecade=
+my.com/u/click?_t=3D13e4e7efd5b34d1d982e9fb34505f006&_m=3Df74d459fc25446009=
+b14e60847aae413&_e=3DMgi2T_qProWnnXWrNzXCJDGLfQFG3nAH7boUcYMhUrTrhPN7Qe20Pl=
+3VeD4l6dbh26msx3fUP4oLjxjZO5YQQRqOoc7dWa9vhzQ9_KneQPIlS-ek7IRt10YbwYVvesxWA=
+Itux7W2f6eLnrp9o2vUZLGVE_htOcTIOn_XfWX3iMvY1pYrUZTNs9aavuxEHZYpmhJZbWBqdPGu=
+dEsxQgURhujVSYDQIJc9QmlV5ekoX2i_OGa0iZGrdXo0VSxbvCQ0SGiKIf24xmvht96dxjxVjhv=
+6zBNuEmBNwHiW7Ei6bxndyM0EWjZXjoBu0GuxKxxmHpHIHaZduaOVPGLeYohW7SwKbG1-A7ymq4=
+_JGVqHeN2Py-P_9J1GgSMvdq1ZzEnVnUGGsJk2LVs7Un0fvLXMuKsXQ_-W5h3N_X8garh7iHw_q=
+7hZrxMZ8Qdo8TAiwM3yOI094cYI5nEuDrxeqPzM7x7-Zx4N8OlGuS1fq9UL_OYzI8U3SwhhiuVN=
+GlU5DOwNWTLkhINweZQUYaGuIRVvVtb9rvcLaKlc15eu90IWqYGHljNNZ4MOQS33dsVv16p9u-y=
+IvKrtzc_Ly7OUegkhJWE85AWeAtEZ55wYaTxWi6k4GKK5rgeYgDteM34bckCo" alt target=
+=3D"_blank" style=3D"outline: none; display: block; text-decoration: none !=
+important;"><img border=3D"0" valign=3D"top" width=3D"265" src=3D"https://w=
+ww.cdn1ve3zg.com/xhw0ofjm93/en_us/images/6272ddbadc731-1651695034.903.png" =
+alt title class=3D"st-hide-mobile st-resize" style=3D"border: 0px; display:=
+ block; width: 265px; max-width: 100%;"> <!--[if !mso 12]><!--> <div class=
+=3D"show-img-mobile" style=3D"-webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale; display: none; width: 0px; overflow: hidden; ma=
+x-height: 0px !important;"><img src=3D"https://www.cdn1ve3zg.com/xhw0ofjm93=
+/en_us/images/6272ddcb5566c-1651695051.3498.png" border=3D"0" width=3D"265"=
+ valign=3D"top" alt title class=3D"st-resize" style=3D"display: block; bord=
+er: none; max-width: 100%; height: auto; width: 265px;"></div> <!--<![endif=
+]--> </a></td> </tr> </table> </td> </tr> </table> <!--[if gte mso 9]></td>=
+ <td width=3D"198.75pt" style=3D"width: 198.75pt" dir=3D"ltr" align=3D"left=
+" valign=3D"top"><![endif]--> <table role=3D"presentation" align=3D"right" =
+dir=3D"ltr" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"265" =
+class=3D"st-mso-full-width st-mobile-full-width" style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; width: 265px;"> <tr=
+> <td width=3D"100%" align=3D"center" height=3D"290" valign=3D"top" class=
+=3D"st-equal-height reset-padding-sides" style=3D"-webkit-font-smoothing: a=
+ntialiased; -moz-osx-font-smoothing: grayscale; width: 100%; padding-right:=
+ 32px; height: 290px;"> <table role=3D"presentation" width=3D"100%" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoothing: =
+antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tr> <td wi=
+dth=3D"100%" valign=3D"top" align=3D"left" style=3D"-webkit-font-smoothing:=
+ antialiased; -moz-osx-font-smoothing: grayscale; text-align: left; font-fa=
+mily: 'Suisse Intl Mono', 'IBM Plex Mono', 'Courier New'; color: #000000; f=
+ont-size: 16px; font-weight: normal; letter-spacing: normal; line-height: 2=
+0px; padding-bottom: 12px; width: 100%;"> <p style=3D"padding: 0; margin: 0=
+px;"><span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoo=
+thing: grayscale; color: #fff5ff; background-color: #10162f; font-size: 18p=
+x; line-height: 23px;"><strong><span style=3D"-webkit-font-smoothing: antia=
+liased; -moz-osx-font-smoothing: grayscale; background-color: #10162f;">LAS=
+T CHANCE</span></strong></span></p> </td> </tr> <tr> <td width=3D"100%" val=
+ign=3D"top" align=3D"left" style=3D"-webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale; text-align: left; font-family: 'Apercu Pr=
+o', 'Work Sans', Helvetica, Arial, sans-serif; color: #10162f; font-size: 2=
+2px; font-weight: bold; letter-spacing: normal; line-height: 30px; padding-=
+bottom: 12px; width: 100%;"> <p style=3D"padding: 0; margin: 0px;"><span st=
+yle=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: graysc=
+ale; font-size: 56px; line-height: 76px;">50% off</span></p> </td> </tr> <t=
+r> <td width=3D"100%" valign=3D"top" align=3D"left" style=3D"-webkit-font-s=
+moothing: antialiased; -moz-osx-font-smoothing: grayscale; text-align: left=
+; font-family: 'Apercu Pro', 'Work Sans', Helvetica, Arial, sans-serif; col=
+or: #10162f; font-size: 16px; font-weight: normal; letter-spacing: normal; =
+line-height: 24px; padding-bottom: 16px; width: 100%;"> <p style=3D"padding=
+: 0; margin: 0px;"><span style=3D"-webkit-font-smoothing: antialiased; -moz=
+-osx-font-smoothing: grayscale; font-size: 16px; line-height: 24px;">Join P=
+ro today and get 50% off your annual membership with promo code <strong>JUL=
+Y22</strong>.</span></p> </td> </tr> <tr> <td width=3D"100%" align=3D"cente=
+r" valign=3D"top" class=3D"__scope__gcu1tk9v258" style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tab=
+le role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" a=
+lign=3D"left" width=3D"200" class style=3D"-webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale; width: 200px;"> <tr> <td width=3D"=
+100%" valign=3D"top" style=3D"-webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale; width: 100%;"> <table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100=
+%" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale; width: 100%;"> <tr> <td width=3D"1" valign=3D"bottom" style=3D"-w=
+ebkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; widt=
+h: 1px;"> <table role=3D"presentation" width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" style=3D"-webkit-font-smoothing: antialiased; -=
+moz-osx-font-smoothing: grayscale;"> <tr> <td width=3D"100%" valign=3D"top"=
+ align=3D"center" class=3D"br-tbl-2" style=3D"-webkit-font-smoothing: antia=
+liased; -moz-osx-font-smoothing: grayscale; padding: 0px; width: 100%;"> <p=
+ height=3D"35" width=3D"100%" style=3D"padding: 0; mso-line-height-rule: ex=
+actly; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: 100%=
+; width: 100%; height: 35px; max-height: 35px; background-color: #000000; m=
+argin: 0px; font-size: 20px; line-height: 35px; border-bottom-left-radius: =
+2px !important; border-top-left-radius: 2px !important;"> &nbsp; </p> </td>=
+ </tr> </table> </td> <td width=3D"199" valign=3D"top" style=3D"-webkit-fon=
+t-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 199px;=
+"> <table role=3D"presentation" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" style=3D"-webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale;"> <tr> <td width=3D"100%" valign=3D"top" align=
+=3D"left" class=3D"bt-br-bl-0 minw-180" style=3D"-webkit-font-smoothing: an=
+tialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <!--[if mso]>=
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" style=3D"height:28pt; v-text-anchor:middle; w=
+idth:136pt; mso-position-horizontal: left" arcsize=3D"7%" strokecolor=3D"#3=
+a10e5" strokeweight=3D"1pt" fillcolor=3D"#3a10e5"> <w:anchorlock/> <v:textb=
+ox inset=3D"0,0,0,0"><p style=3D"text-align: center; font-family: Suisse In=
+t\l Mono, IBM Plex Mono, Courier New; color: #ffffff; font-size: 16px; font=
+-weight: 700; letter-spacing: normal; mso-line-height-rule: exactly; line-h=
+eight: 18px"><![endif]--> <!--[if !mso]><!--> <table role=3D"presentation" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; border-collapse: in=
+itial;"> <tr> <td width=3D"100%" bgcolor=3D"#3a10e5" align=3D"center" heigh=
+t=3D"36" valign=3D"middle" style=3D"-webkit-font-smoothing: antialiased; -m=
+oz-osx-font-smoothing: grayscale; mso-padding-alt: 0px 16px 0px 16px; borde=
+r-radius: 2px; border-width: 1px; border-color: #3a10e5; border-style: soli=
+d; height: 36px; width: 100%; text-align: center; background-color: #3a10e5=
+; vertical-align: middle; border-bottom-left-radius: 0px !important;"> <!--=
+<![endif]--> <a href=3D"https://itr.links.codecademy.com/u/click?_t=3D13e4e=
+7efd5b34d1d982e9fb34505f006&_m=3Df74d459fc25446009b14e60847aae413&_e=3DMgi2=
+T_qProWnnXWrNzXCJDGLfQFG3nAH7boUcYMhUrTrhPN7Qe20Pl3VeD4l6dbh26msx3fUP4oLjxj=
+ZO5YQQRqOoc7dWa9vhzQ9_KneQPIlS-ek7IRt10YbwYVvesxWAItux7W2f6eLnrp9o2vUZLGVE_=
+htOcTIOn_XfWX3iMvY1pYrUZTNs9aavuxEHZYpmhJZbWBqdPGudEsxQgURhujVSYDQIJc9QmlV5=
+ekoX2jj57W-f7v8m3_xHvJNkvsrcduPxjpdnPmzTseLbZQzE3QqHBdC34CptYjOJ7BPlile6N30=
+kskcsHjZkgUuyqYElp88vBheneQ5lBrKvc1qX_IJJqMOsjDDdtcHfgZHGNCHtcYK5NTVhrY7MS6=
+qCxWjvtuF8F6mYfg-zPcsM9-E-oKmWyp54e7HXZCokiFbLNinLzZ8_umrmfgUgl7ElOWnn3r3Y0=
+xnDw5LANqu1WQHdxQE6XNQtVSwVDtWGq7W69ZtbvqftxMTGVuDoQ394-4zJLnNNKDYnN6mNldmJ=
+i8Sfe544BNdlH5VeJCxb0evh0H0S8es-0gYEwVmzAsxrBtn7LlGRAN6uDOBaRs2sRIdsQ7YEiL0=
+-tRCxAQVH3QW4wfrbOJrLIvngm7PcPvV5gzB" target=3D"_blank" bgcolor=3D"#3a10e5"=
+ valign=3D"middle" style=3D"outline: none; mso-line-height-rule: exactly; t=
+ext-align: center; font-family: 'Suisse Intl Mono', 'Work Sans', Helvetica,=
+ Arial, sans-serif; color: #ffffff; font-size: 16px; font-weight: 700; lett=
+er-spacing: normal; line-height: 24px; padding-right: 16px; padding-left: 1=
+6px; display: table-cell; height: 36px; border-radius: 2px; vertical-align:=
+ middle; text-decoration: none !important; min-width: 148px !important;"> <=
+span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing:=
+ grayscale; margin: 0px; color: #ffffff;"><span style=3D"-webkit-font-smoot=
+hing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 16px; lin=
+e-height: 24px;">Join Pro</span></span></a> <!--[if !mso]><!--> </td> </tr>=
+ </table> <!--<![endif]--> <!--[if mso]></p></v:textbox> </v:roundrect><![e=
+ndif]--> </td> </tr> <tr> <td width=3D"100%" valign=3D"top" align=3D"left" =
+class=3D"hd-br-br-2" style=3D"-webkit-font-smoothing: antialiased; -moz-osx=
+-font-smoothing: grayscale; padding: 0px; width: 100%;"> <p height=3D"5" wi=
+dth=3D"89%" style=3D"padding: 0; mso-hide: all; text-size-adjust: 100%; wid=
+th: 89%; height: 5px; max-height: 5px; background-color: #000000; margin: 0=
+px; border-bottom-right-radius: 2px !important;"> &nbsp; </p> <!--[if mso]>=
+<p bgcolor=3D"#000000" height=3D"5" style=3D"margin:0px 21.78px 0px 0px; he=
+ight: 5px; max-height: 5px; mso-line-height-rule:exactly; mso-table-lspace:=
+0pt; mso-table-rspace:0pt; line-height: 5px; font-size: 5px; background-col=
+or:#000000;"> &nbsp; </p><![endif]--> </td> </tr> </table> </td> </tr> </ta=
+ble> </td> </tr> </table> </td> </tr> <tr> <td width=3D"100%" valign=3D"top=
+" align=3D"left" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale; width: 100%;"> <table role=3D"presentation" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoothing: =
+antialiased; -moz-osx-font-smoothing: grayscale; border-collapse: initial;"=
+> <tr> <td width=3D"100%" align=3D"center" height=3D"5" valign=3D"middle" s=
+tyle=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays=
+cale; mso-padding-alt: 12px 0px 0px 0px; height: 5px; width: 100%; text-ali=
+gn: center; vertical-align: middle;"> <a href=3D"https://itr.links.codecade=
+my.com/u/click?_t=3D13e4e7efd5b34d1d982e9fb34505f006&_m=3Df74d459fc25446009=
+b14e60847aae413&_e=3DMgi2T_qProWnnXWrNzXCJDGLfQFG3nAH7boUcYMhUrTrhPN7Qe20Pl=
+3VeD4l6dbh0wQvQp1G4TQVKwa_aF4u4eoYHZPQkig5IDiB1RmeB8ezb6b42Va2XjdaiO3ESc8SS=
+aFn72-GFw6q4Epao4-Q9o3Y9VmMhvd7q0QysWx6zF5vG7UVf1FCj5yq_Alxie8aO5nyG5fOW33C=
+F0F9jwwGBlYCLTLf4cvlpV6mPoLhdM8lDQC8UAv0fEQ3yDac-2KdYX4eHrupbmxlLlRMpkBRlWS=
+uPOxZTm1a4hG9lK-Mtpt9HmMxmaHl7lEVYcw2ZBIs9I81txvDfQNQg3UF509mTq2MiWT_-AarMg=
+mS8_XiKP9CAstrbVfKKN9QNX7s_GypOUDjwsWNcqjDA169au_pVXbT_zml94a4VvC1rGUu1eplu=
+6o29DAfxd6m6P7-ui4AL_T1x7ukohGUHS06L6eCssR04JdGRjt21JciBalKKpBNyfWVbXriR0aW=
+XxCWrMYGIwGUacTzPtCO8g0AsxMRC2qrvI4PamjzTltKBRCQCq5psCBxazf7RvC2UFLGfi_ue_s=
+eqGrwKmlaXKD3h7VpZuCrcr4c4IpVXXfjTkRu8EIpwPqYYe3vmfd91jyYg9bT" target=3D"_b=
+lank" valign=3D"middle" style=3D"outline: none; mso-line-height-rule: exact=
+ly; text-align: center; font-family: 'Apercu Pro', 'Work Sans', Helvetica, =
+Arial, sans-serif; color: #3a10e5; font-size: 16px; font-weight: normal; le=
+tter-spacing: normal; line-height: 24px; padding-top: 12px; display: table-=
+cell; height: 5px; border-radius: 0px; vertical-align: middle; text-decorat=
+ion: none !important;"> <span style=3D"-webkit-font-smoothing: antialiased;=
+ -moz-osx-font-smoothing: grayscale; margin: 0px; color: #3a10e5;"><strong>=
+<span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing=
+: grayscale; text-decoration: underline;"><span style=3D"-webkit-font-smoot=
+hing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 16px; lin=
+e-height: 24px;">Join Pro Student</span></span></strong></span></a> </td> <=
+/tr> </table> </td> </tr> </table> </td> </tr> </table> <!--[if gte mso 9]>=
+</td> </tr> </table><![endif]--> </td> </tr> </table> </td> </tr> </table> =
+</td> </tr> <tr> <td width=3D"100%" valign=3D"top" align=3D"center" class=
+=3D"st-dynamic-1149-5" style=3D"-webkit-font-smoothing: antialiased; -moz-o=
+sx-font-smoothing: grayscale;"> <table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"650" class=3D"=
+st-wrapper st-wrapper-background st-module-wrapper-table" style=3D"-webkit-=
+font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 650=
+px;"> <tr> <td width=3D"100%" bgcolor=3D"#FFF5FF" valign=3D"top" style=3D"-=
+webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; wid=
+th: 100%;"> <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"650" class=3D"st-mso-full-width st-mobile-full-widt=
+h" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale; width: 650px;"> <tr> <td width=3D"100%" align=3D"center" valign=
+=3D"top" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smooth=
+ing: grayscale; width: 100%;"> <table role=3D"presentation" width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tr>=
+ <td width=3D"100%" valign=3D"top" align=3D"center" style=3D"-webkit-font-s=
+moothing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 0px; wi=
+dth: 100%;"> <p height=3D"24" width=3D"100%" style=3D"padding: 0; mso-line-=
+height-rule: exactly; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-si=
+ze-adjust: 100%; width: 100%; height: 24px; max-height: 24px; margin: 0px; =
+font-size: 24px; line-height: 24px;"> &nbsp; </p> </td> </tr> </table> </td=
+> </tr> </table> </td> </tr> </table> </td> </tr> <tr> <td width=3D"100%" v=
+align=3D"top" align=3D"center" class=3D"st-dynamic-1149-5" style=3D"-webkit=
+-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;"> <table =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" alig=
+n=3D"center" width=3D"650" class=3D"st-wrapper st-wrapper-background st-mod=
+ule-wrapper-table" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-f=
+ont-smoothing: grayscale; width: 650px;"> <tr> <td width=3D"100%" bgcolor=
+=3D"#FFF5FF" valign=3D"top" style=3D"-webkit-font-smoothing: antialiased; -=
+moz-osx-font-smoothing: grayscale; width: 100%;"> <table role=3D"presentati=
+on" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"650" class=3D=
+"st-mso-full-width st-mobile-full-width" style=3D"-webkit-font-smoothing: a=
+ntialiased; -moz-osx-font-smoothing: grayscale; width: 650px;"> <tr> <td wi=
+dth=3D"100%" align=3D"center" valign=3D"top" style=3D"-webkit-font-smoothin=
+g: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <table r=
+ole=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoot=
+hing: grayscale; width: 100%;"> <tr> <td width=3D"100%" valign=3D"top" alig=
+n=3D"center" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-sm=
+oothing: grayscale; padding: 0px; width: 100%;"> <p height=3D"48" width=3D"=
+100%" style=3D"padding: 0; mso-line-height-rule: exactly; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; text-size-adjust: 100%; width: 100%; height: 4=
+8px; max-height: 48px; margin: 0px; font-size: 48px; line-height: 48px;"> &=
+nbsp; </p> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> <=
+/td> </tr> <tr> <td width=3D"100%" valign=3D"top" align=3D"center" class=3D=
+"st-dynamic-1149-5" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale;"> <table role=3D"presentation" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"650" class=3D"st-=
+wrapper st-wrapper-background st-module-wrapper-table" style=3D"-webkit-fon=
+t-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 650px;=
+"> <tr> <td width=3D"100%" bgcolor=3D"#FFFFFF" valign=3D"top" style=3D"-web=
+kit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width:=
+ 100%;"> <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" width=3D"650" class=3D"st-mso-full-width st-mobile-full-width" =
+style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gray=
+scale; width: 650px;"> <tr> <td width=3D"100%" align=3D"center" valign=3D"t=
+op" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: =
+grayscale; width: 100%;"> <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoothing=
+: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tr> <td =
+width=3D"100%" valign=3D"top" align=3D"center" style=3D"-webkit-font-smooth=
+ing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 0px; width: =
+100%;"> <p height=3D"48" width=3D"100%" style=3D"padding: 0; mso-line-heigh=
+t-rule: exactly; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-ad=
+just: 100%; width: 100%; height: 48px; max-height: 48px; margin: 0px; font-=
+size: 48px; line-height: 48px;"> &nbsp; </p> </td> </tr> </table> </td> </t=
+r> </table> </td> </tr> </table> </td> </tr> <tr> <td width=3D"100%" valign=
+=3D"top" align=3D"center" class=3D"st-dynamic-1149-5" style=3D"-webkit-font=
+-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;"> <table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D=
+"center" width=3D"650" class=3D"st-wrapper st-wrapper-background st-module-=
+wrapper-table" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-=
+smoothing: grayscale; width: 650px;"> <tr> <td width=3D"100%" bgcolor=3D"#F=
+FFFFF" valign=3D"top" class=3D"padding-sides-22" style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; width: 100%; paddin=
+g-right: 60px; padding-left: 60px;"> <table role=3D"presentation" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" sty=
+le=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: graysca=
+le; width: 100%;"> <tr> <td width=3D"100%" valign=3D"top" align=3D"left" st=
+yle=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: graysc=
+ale;"> <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" width=3D"530" class=3D"st-mso-full-width st-mobile-full-width" st=
+yle=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: graysc=
+ale; width: 530px;"> <tr> <td width=3D"100%" align=3D"center" valign=3D"top=
+" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gr=
+ayscale; width: 100%;"> <table role=3D"presentation" width=3D"100%" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoothing: =
+antialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tr> <td wi=
+dth=3D"100%" valign=3D"top" align=3D"left" style=3D"-webkit-font-smoothing:=
+ antialiased; -moz-osx-font-smoothing: grayscale; text-align: left; font-fa=
+mily: 'Apercu Pro', 'Work Sans', Helvetica, Arial, sans-serif; color: #0000=
+00; font-size: 12px; font-weight: normal; letter-spacing: normal; line-heig=
+ht: 18px; padding-bottom: 24px; width: 100%;"> <p style=3D"padding: 0; marg=
+in: 0px;"><span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font=
+-smoothing: grayscale; font-size: 12px; line-height: 18px; color: #616161;"=
+>*<strong>50% Off Pro</strong> offer valid from July 5, 2022 at 12:00:00 am=
+ Eastern Standard Time (&ldquo;EST&rdquo;) and ends at 11:59:59 pm EST on J=
+uly 6, 2022. Discount is only applicable to new annual subscription plans, =
+and cannot be combined with any other offer or used for any Codecademy for =
+Business plans. Code valid one time only. Discount is not applicable to tax=
+es. Codecademy reserves the right to modify or cancel this promotion at any=
+ time without notice. Any subscription plan purchases are subject to Codeca=
+demy&rsquo;s <a class=3D" st-no-tracking" style=3D"outline: none; color: #6=
+16161; text-decoration: none !important;" href=3D"https://itr.links.codecad=
+emy.com/u/click?_t=3D13e4e7efd5b34d1d982e9fb34505f006&_m=3Df74d459fc2544600=
+9b14e60847aae413&_e=3DMgi2T_qProWnnXWrNzXCJDGLfQFG3nAH7boUcYMhUrQLSSY4Xg62D=
+4ceNhg5j0Hh2a_nto3LIhI8DxZGXKCWm_djZICKdtLS-HkflLjZMr-qgvtqGVeE6C_V8g5JOep6=
+CfAFkALjGhG_IQzlS79eaJK5hFLVm10fiLosrCKFmDPuF9fm0L1gXD0DrW6pwcXoSGJr9FMHB11=
+p-lgbBTWfK7fbKtpmpiOtDL7n994vXDQftlb7pWfRLoAOVN_7gYcET9W1RV2y0WxUG1HuoQt2Ww=
+%3D%3D"><u>Terms of Service</u></a>.</span></p> </td> </tr> </table> </td> =
+</tr> </table> </td> </tr> <tr> <td width=3D"100%" valign=3D"top" align=3D"=
+left" class=3D"outlook-font-size" style=3D"-webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale;"> <table role=3D"presentation" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"530" class=3D"st-mso=
+-full-width st-mobile-full-width" style=3D"-webkit-font-smoothing: antialia=
+sed; -moz-osx-font-smoothing: grayscale; width: 530px;"> <tr> <td width=3D"=
+100%" align=3D"center" valign=3D"top" style=3D"-webkit-font-smoothing: anti=
+aliased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <table role=3D"=
+presentation" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale; width: 100%;"> </table> </td> </tr> </table> </td> </tr> </table>=
+ </td> </tr> </table> </td> </tr> <tr> <td width=3D"100%" valign=3D"top" al=
+ign=3D"center" class=3D"st-dynamic-1149-5" style=3D"-webkit-font-smoothing:=
+ antialiased; -moz-osx-font-smoothing: grayscale;"> <table role=3D"presenta=
+tion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" wid=
+th=3D"650" class=3D"st-wrapper st-wrapper-background st-module-wrapper-tabl=
+e" style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: g=
+rayscale; width: 650px;"> <tr> <td width=3D"100%" bgcolor=3D"#FFFFFF" valig=
+n=3D"top" class=3D"padding-sides-22" style=3D"-webkit-font-smoothing: antia=
+liased; -moz-osx-font-smoothing: grayscale; width: 100%; padding: 72px 90px=
+;"> <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"470" class=3D"st-mso-full-width st-mobile-full-width" style=
+=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale=
+; width: 470px;"> <tr> <td width=3D"100%" align=3D"center" valign=3D"top" s=
+tyle=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grays=
+cale; width: 100%;"> <table role=3D"presentation" width=3D"100%" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" style=3D"-webkit-font-smoothing: ant=
+ialiased; -moz-osx-font-smoothing: grayscale; width: 100%;"> <tr> <td width=
+=3D"100%" valign=3D"top" align=3D"left" style=3D"-webkit-font-smoothing: an=
+tialiased; -moz-osx-font-smoothing: grayscale; text-align: left; font-famil=
+y: 'Apercu Pro', 'Work Sans', Helvetica, Arial, sans-serif; color: #000000;=
+ font-size: 14px; font-weight: normal; letter-spacing: normal; line-height:=
+ 24px; width: 100%;"> <p style=3D"padding: 0; margin: 0px; text-align: cent=
+er;"><span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoo=
+thing: grayscale; font-size: 14px; line-height: 24px;"><a class=3D" st-no-t=
+racking" style=3D"outline: none; color: #000000; text-decoration: none !imp=
+ortant;" href=3D"https://itr.links.codecademy.com/e/evib?_t=3D13e4e7efd5b34=
+d1d982e9fb34505f006&_m=3Df74d459fc25446009b14e60847aae413&_e=3DcEWbztFcEPXX=
+ScbV6NQtGGlpW4cvgqDsAYh2xA2vplyF2pT4ij6woWotqFUAifBP9GKCIXaQPDF-rGz3lOdR7PB=
+ydBdH3lOzytuIHNOVe_LljjMzkO8qTS6rhr8GICUN"><span style=3D"-webkit-font-smoo=
+thing: antialiased; -moz-osx-font-smoothing: grayscale; color: #000000;">Vi=
+ew Web Version</span></a> | <a style=3D"outline: none; color: #000000; text=
+-decoration: none !important;" href=3D"https://itr.links.codecademy.com/u/c=
+lick?_t=3D13e4e7efd5b34d1d982e9fb34505f006&_m=3Df74d459fc25446009b14e60847a=
+ae413&_e=3DMgi2T_qProWnnXWrNzXCJDGLfQFG3nAH7boUcYMhUrS7mazZRVOpVweDrnLjUciU=
+FrzR9uZ-ZQ2dMSi1FStJD8YJNvFpXQOiff5H2vPrb9GAe3TekYJCbt2v1kZ9Mvxgk7hRwJRgWqz=
+KOdJDMvk38Y_yZTxZJwWesGnJSfClZHBpXK95NRQostHRPPmb2LmKwsjP5npsGG0z8B91m6DRtN=
+AHiwafCAJIZGGgAw5Ze4OPDtwGfZGLiJ83zCgtbHTo3A0EnlWasClaXCq7CniCTdTBH6eiG5k-7=
+c_3Xz27mdSoRg7lPHKiLe0V3g2V-K7advf8605ZaZVmYl0SPdfPcA%3D%3D"><span style=3D=
+"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; c=
+olor: #000000;">Email Preferences</span></a> | <a class=3D" st-no-tracking"=
+ style=3D"outline: none; color: #000000; text-decoration: none !important;"=
+ href=3D"https://itr.links.codecademy.com/e/encryptedUnsubscribe?_r=3D13e4e=
+7efd5b34d1d982e9fb34505f006&_s=3Df74d459fc25446009b14e60847aae413&_t=3DcEWb=
+ztFcEPXXScbV6NQtGGlpW4cvgqDsAYh2xA2vplwhNVhyPXkAVT81ijjYONAjBVLGzrWM18Ho688=
+ZCLPNg1GImJTFKzMCKggwn1-JK8BkMjI1nxOwu5Z_4fV4X3dH8vnk-pQ3KNSZJE5yR_oYfPB-bA=
+q6LAWht0gtpKLzQSWC9WgwD1q8VwmCBUtn28gT8qIaZtY8e-5sPYUdBRtMsx3SISySljeTO6Jg7=
+jRdcJI%3D"><span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-fon=
+t-smoothing: grayscale; color: #000000;">Unsubscribe</span></a> | <a style=
+=3D"outline: none; color: #000000; text-decoration: none !important;" href=
+=3D"https://itr.links.codecademy.com/u/click?_t=3D13e4e7efd5b34d1d982e9fb34=
+505f006&_m=3Df74d459fc25446009b14e60847aae413&_e=3DMgi2T_qProWnnXWrNzXCJDGL=
+fQFG3nAH7boUcYMhUrROfc9kO2BozBDKc2JLZ5-h1H0CDhCC-5bBAZlod-UxrU5VbSSPFypORVg=
+StR5rrSLVn33rkXoVR-GGpIOk-qMaXY8LavWNFCLa6s0xHBQyHtBRS4r9Y-SLOriKoN5a_QWYR-=
+9ZxZ24k8AEfnRWipbk024uTVTYdPKTfon7Xyq7g9C7ZVp3n6C-DZCDaNN5hRupJC5M38ZGNRRj7=
+r3lGv_dYtIYwVrebfg87tllX5d944bo5HD_IgvANeTIt8Ft7eNwrPIpETR2pg03X44HD5J8Lu8t=
+JE8AOEJBIAZ4Qlo30A%3D%3D"><span style=3D"-webkit-font-smoothing: antialiase=
+d; -moz-osx-font-smoothing: grayscale; color: #000000;">Privacy Policy</spa=
+n></a></span></p> <p style=3D"padding: 0; margin: 0px; text-align: center;"=
+><span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothin=
+g: grayscale; font-size: 14px; line-height: 24px;">Copyright Codecademy. Al=
+l rights reserved. </span></p> <p style=3D"padding: 0; margin: 0px; text-al=
+ign: center;"><span style=3D"-webkit-font-smoothing: antialiased; -moz-osx-=
+font-smoothing: grayscale; font-size: 14px; line-height: 24px;">575 Broadwa=
+y, 5th Floor, New York City, NY 10012</span></p> </td> </tr> </table> </td>=
+ </tr> </table> </td> </tr> </table> </td> </tr> <!--[if (!lte mso 19)|(!IE=
+)]><!--> <tr> <td class=3D"st-gmail-fix" style=3D"-webkit-font-smoothing: a=
+ntialiased; -moz-osx-font-smoothing: grayscale; background-color: #FFFFFF; =
+line-height: 1px; height: 1px; min-width: 650px; display: none !important;"=
+ height=3D"1" bgcolor=3D"#FFFFFF"> <img src=3D"https://www.cdn1ve3zg.com/xh=
+w0ofjm93/en_us/images/spacer.gif" alt height=3D"1" width=3D"650" style=3D"m=
+ax-height: 1px; display: block; width: 650px; min-width: 650px; border: 0;"=
+> </td> </tr> <!--<![endif]--> </table> <img width=3D"1px" height=3D"1px" a=
+lt=3D"" src=3D"http://mg.itr.mail.codecademy.com/o/eJw9jUtuwzAMRE9jLw2KoiRr=
+4UU_mxyDISnXRZQYjja9fVQ06WYwwJuPLrOKIY_bgoAICaIj7z1OJVpgnIM6ljKzGwi2dkyVt8s=
+kNzVhtfrTbR2_lgAsKYObKZ-LmhIBO0IyySqQ3XgsytfWS5M26VPrc6eO1RorN16G9D4gVrvfeb=
+WTdj_4t64lkVLIRTAQRYB8dmQRZkrMRs7_BvGja7O6X7j9dyOGmDP9wf24fZu0F8tATyBcd97W6=
+4v0i5A8DenzARwXUH0"></body> </html>
+--b0ace4ba42bb2b1e72376e97b11c9879c9f4a1dfbfaf876415d28b020414--
