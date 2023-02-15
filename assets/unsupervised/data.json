@@ -1,0 +1,12 @@
+[
+  { "id":1,"items": ["Bread", "Butter", "Milk"] },
+  { "id":2,"items": ["Eggs", "Milk", "Yogurt"] },
+  { "id":3,"items": ["Bread", "Cheese", "Eggs", "Milk"] },
+  { "id":4,"items": ["Eggs", "Milk", "Yogurt"] },
+  { "id":4,"items": ["Cheese", "Milk", "Yogurt"] },
+  { "id":5,"items": ["Bread", "Butter", "Milk"] },
+  { "id":6,"items": ["Eggs", "Milk", "Yogurt"] },
+  { "id":7,"items": ["Bread", "Cheese", "Eggs", "Milk"] },
+  { "id":8,"items": ["Eggs", "Milk", "Yogurt"] },
+  { "id":9,"items": ["Cheese", "Milk", "Yogurt"] }
+]

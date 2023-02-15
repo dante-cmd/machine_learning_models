@@ -1,0 +1,5 @@
+label,name
+0,doraemon.png
+1,gigante.png
+2,nobita.png
+3,suneo.png

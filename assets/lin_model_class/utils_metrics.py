@@ -6,13 +6,15 @@ def assessment(y, X, model):
 
     predicted_prob1 = model.predict_proba(X)[:, 1]
     auc = metrics.roc_auc_score(y, predicted_prob1)
-    print(f"Initial AUC value is {auc:.4f}")
+    print(f"AUC value is {auc:.4f}")
     print()
 
 def confusion_matrix(y, X, model):
     print('Confusion Matrix')
     cf = metrics.confusion_matrix(y, model.predict(X))
     print(">",cf)
+    print('> Columns: predict [0, 1]')
+    print('> Rows: outcomes [0, 1]')
     print()
 
 def prob_cond_pred(y,X, model):
